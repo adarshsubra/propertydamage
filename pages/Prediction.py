@@ -1,4 +1,4 @@
-
+import pickle
 import joblib
 import pandas as pd
 import streamlit as st
@@ -18,7 +18,7 @@ lasso_reg = Lasso()
 
 lasso_reg.fit(X,y)
 
-joblib.dump(lasso_reg,"/Users/adarshsubramanian//Desktop/Work/lasso_reg_mod.pkl")
+pickle.dump(lasso_reg,open("/Users/adarshsubramanian//Desktop/Work/lasso_reg_mod.pkl", 'wb'))
 
 
 
@@ -84,7 +84,7 @@ def show_prediction_page():
       'May':14, 'April':5, 'August':25, 'July':30, 'September':3}})
       
       
-      lasso_reg_mod = joblib.load("/Users/adarshsubramanian//Desktop/Work/lasso_reg_mod.pkl")
+      lasso_reg_mod = pickle.load(open("/Users/adarshsubramanian//Desktop/Work/lasso_reg_mod.pkl", 'rb'))
       
 
       
